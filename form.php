@@ -28,6 +28,10 @@ if(isset($_POST['submit'])){
 
   $aplicacion_barniz = $_POST["aplicacion_barniz"];
 
+  $cariados = $_POST["cariados"];
+  $perdidos = $_POST["perdidos"];
+  $obturados = $_POST["obturados"];
+
   $cop = $_POST["cop"];
 
   $firma = $_POST["firma"];
@@ -38,8 +42,8 @@ if(isset($_POST['submit'])){
 
   
 
-$query = "INSERT INTO form (documento, edad, fecha_valoracion, fecha_prox_cita, aplicacion_barniz, cop, firma, ips, observaciones) VALUES('$documento', 
-'$edad', '$fecha_valoracion', '$fecha_prox_cita', '$aplicacion_barniz', '$cop', '$firma', '$ips', '$observaciones')";
+$query = "INSERT INTO form (documento, edad, fecha_valoracion, fecha_prox_cita, aplicacion_barniz, cariados, perdidos, obturados, cop, firma, ips, observaciones) VALUES('$documento', 
+'$edad', '$fecha_valoracion', '$fecha_prox_cita', '$aplicacion_barniz', '$cariados', '$perdidos', '$obturados', '$cop', '$firma', '$ips', '$observaciones')";
 
 mysqli_query($conn, $query);
 
@@ -76,9 +80,7 @@ echo
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/form-styles.css">
@@ -215,11 +217,11 @@ echo
 
           <span class="details">COP</span>
 
-          <input type="number" id="num1" placeholder="Dientes cariados" required>
+          <input type="number" id="num1" name="cariados" placeholder="Dientes cariados" required>
 
-          <input type="number" id="num2" placeholder="Dientes perdidos" required>
+          <input type="number" id="num2" name="perdidos" placeholder="Dientes perdidos" required>
 
-          <input type="number" id="num3" placeholder="Dientes obturados" required>
+          <input type="number" id="num3" name="obturados" placeholder="Dientes obturados" required>
 
           <button class="add" id="add">=</button>
 
@@ -266,7 +268,6 @@ echo
 
 
   <script>
-
   var n1 = document.getElementById("num1");
 
   var n2 = document.getElementById("num2");
@@ -282,7 +283,6 @@ echo
     res.value = parseInt(n1.value) + parseInt(n2.value) + parseInt(n3.value);
 
   });
-
   </script>
 
 </body>
