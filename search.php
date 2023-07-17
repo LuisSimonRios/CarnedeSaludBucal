@@ -40,7 +40,8 @@ include 'database.php';
                   <div class="input-group">
                     <input type="text" placeholder="Ingresar el documento o edad a consultar" class="form-control"
                       name="search">
-                    <button class="btn btn-dark btn-sm" name="submit">Buscar</button>
+                    <button class="btn btn-dark ml-2" name="submit">Buscar</button>
+                    <a href="./excel.php" class="btn btn-primary ml-1">Descargar Excel</a>
                   </div>
                 </form>
               </div>
